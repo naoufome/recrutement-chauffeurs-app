@@ -1,65 +1,65 @@
-# Recrutement Chauffeurs App
+# Driver Recruitment App
 
-Application web complète pour la gestion du recrutement, des employés, des absences, des entretiens et de l'administration RH, dédiée aux sociétés de transport ou agences de chauffeurs.
-
----
-
-## 🚀 Fonctionnalités principales
-- Gestion des candidats, offres d'emploi, entretiens et évaluations
-- Gestion des employés, absences, congés et demandes de congé
-- Tests de conduite et évaluations associées
-- Gestion documentaire (documents liés aux candidats/employés)
-- Gestion des véhicules
-- Génération de rapports PDF (offres, employés, absences, entretiens, etc.)
-- Export CSV des employés
-- Tableau de bord interactif avec statistiques et calendrier (Chart.js, FullCalendar)
-- Gestion fine des rôles et permissions (Spatie Laravel Permission)
+Complete web application for managing recruitment, employees, absences, interviews, and HR administration, dedicated to transportation companies or driver agencies.
 
 ---
 
-## 🛠️ Stack technique
-- **Backend** : Laravel 12 (PHP 8.2+)
-- **Frontend** : TailwindCSS, Vite, Alpine.js, Chart.js, FullCalendar, Heroicons, HeadlessUI
-- **PDF** : DOMPDF (barryvdh/laravel-dompdf)
-- **Permissions** : Spatie Laravel Permission
-- **Tests** : PHPUnit, Laravel Dusk
-- **Autres** : Axios, Faker, Mockery, Laravel Breeze (authentification)
+## 🚀 Main Features
+- Candidate management, job offers, interviews, and evaluations
+- Employee management, absences, leaves, and leave requests
+- Driving tests and associated evaluations
+- Document management (documents related to candidates/employees)
+- Vehicle management
+- PDF report generation (offers, employees, absences, interviews, etc.)
+- Employee CSV export
+- Interactive dashboard with statistics and calendar (Chart.js, FullCalendar)
+- Fine-grained role and permission management (Spatie Laravel Permission)
 
 ---
 
-## ⚡ Installation & configuration
+## 🛠️ Technical Stack
+- **Backend**: Laravel 12 (PHP 8.2+)
+- **Frontend**: TailwindCSS, Vite, Alpine.js, Chart.js, FullCalendar, Heroicons, HeadlessUI
+- **PDF**: DOMPDF (barryvdh/laravel-dompdf)
+- **Permissions**: Spatie Laravel Permission
+- **Tests**: PHPUnit, Laravel Dusk
+- **Others**: Axios, Faker, Mockery, Laravel Breeze (authentication)
 
-### Prérequis
+---
+
+## ⚡ Installation & Configuration
+
+### Prerequisites
 - PHP 8.2+
 - Composer
 - Node.js & npm
-- Base de données MySQL ou SQLite
+- MySQL or SQLite database
 
-### Étapes
-1. Cloner le dépôt :
+### Steps
+1. Clone the repository:
    ```bash
    git clone <repo_url>
    cd recrutement-chauffeurs-app
    ```
-2. Installer les dépendances backend et frontend :
+2. Install backend and frontend dependencies:
    ```bash
    composer install
    npm install
    ```
-3. Copier le fichier d'environnement :
+3. Copy the environment file:
    ```bash
    cp .env.example .env
    ```
-4. Générer la clé d'application :
+4. Generate application key:
    ```bash
    php artisan key:generate
    ```
-5. Configurer la base de données dans `.env` (MySQL ou SQLite)
-6. Lancer les migrations et seeders :
+5. Configure the database in `.env` (MySQL or SQLite)
+6. Run migrations and seeders:
    ```bash
    php artisan migrate --seed
    ```
-7. Lancer le serveur de développement :
+7. Start the development server:
    ```bash
    npm run dev
    php artisan serve
@@ -67,63 +67,63 @@ Application web complète pour la gestion du recrutement, des employés, des abs
 
 ---
 
-## 📁 Structure du projet
-- `app/Models` : Modèles Eloquent (Candidat, Employé, Offre, etc.)
-- `app/Http/Controllers` : Contrôleurs métiers (CandidateController, EmployeeController, etc.)
-- `app/Http/Requests` : Validation des formulaires
-- `app/Policies` : Policies pour la gestion des permissions
-- `resources/views` : Vues Blade (UI)
-- `resources/js` : Scripts front-end (Alpine.js, Chart.js)
-- `routes/web.php` : Définition des routes principales
-- `config/permission.php` : Configuration Spatie Permission
-- `tests/` : Tests unitaires et E2E
+## 📁 Project Structure
+- `app/Models`: Eloquent Models (Candidate, Employee, Offer, etc.)
+- `app/Http/Controllers`: Business Controllers (CandidateController, EmployeeController, etc.)
+- `app/Http/Requests`: Form Validation
+- `app/Policies`: Permission Management Policies
+- `resources/views`: Blade Views (UI)
+- `resources/js`: Front-end Scripts (Alpine.js, Chart.js)
+- `routes/web.php`: Main Routes Definition
+- `config/permission.php`: Spatie Permission Configuration
+- `tests/`: Unit and E2E Tests
 
 ---
 
-## 🔒 Sécurité & Permissions
-- Authentification via Laravel Breeze
-- Rôles et permissions dynamiques via Spatie Laravel Permission
-- Middleware `auth`, `verified`, `role:admin` pour protéger les routes sensibles
-- Policies pour contrôler l'accès aux opérations critiques
+## 🔒 Security & Permissions
+- Authentication via Laravel Breeze
+- Dynamic roles and permissions via Spatie Laravel Permission
+- `auth`, `verified`, `role:admin` middleware to protect sensitive routes
+- Policies to control access to critical operations
 
 ---
 
-## 🧪 Tests
-- Lancer tous les tests unitaires et fonctionnels :
+## 🧪 Testing
+- Run all unit and functional tests:
   ```bash
   php artisan test
   ```
-- Lancer les tests E2E avec Laravel Dusk :
+- Run E2E tests with Laravel Dusk:
   ```bash
   php artisan dusk
   ```
 
 ---
 
-## 📝 Génération de rapports & export
-- Génération de PDF (offres, employés, absences, entretiens...)
-- Export CSV des employés
-- Accès via les routes `/reports`, `/employees/pdf`, `/offers/pdf`, etc.
+## 📝 Report Generation & Export
+- PDF generation (offers, employees, absences, interviews...)
+- Employee CSV export
+- Access via routes `/reports`, `/employees/pdf`, `/offers/pdf`, etc.
 
 ---
 
-## 🤝 Contribution
-1. Forker le projet
-2. Créer une branche (`feature/ma-fonctionnalite`)
-3. Commiter vos modifications
-4. Ouvrir une pull request
+## 🤝 Contributing
+1. Fork the project
+2. Create a branch (`feature/my-feature`)
+3. Commit your changes
+4. Open a pull request
 
 ---
 
-## 📄 Documentation avancée
-- Voir `rapport_pfe.md` pour les choix d'architecture, les explications métiers et techniques détaillées.
-- La documentation métier et technique complète est maintenue dans ce fichier pour faciliter la compréhension et la maintenance du projet.
+## 📄 Advanced Documentation
+- See `rapport_pfe.md` for architecture choices, business and technical detailed explanations.
+- Complete business and technical documentation is maintained in this file to facilitate project understanding and maintenance.
 
 ---
 
-## 📧 Support & contact
-Pour toute question ou bug, ouvrir une issue GitHub ou contacter l'équipe projet.
+## 📧 Support & Contact
+For any questions or bugs, open a GitHub issue or contact the project team.
 
 ---
 
-© 2025 Recrutement Chauffeurs App. Tous droits réservés.
+© 2025 Driver Recruitment App. All rights reserved.
